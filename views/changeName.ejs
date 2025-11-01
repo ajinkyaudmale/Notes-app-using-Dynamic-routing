@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>  
+</head>
+<body class="bg-gray-500 text-white">
+    <div class="bg-gray-600 flex justify-center items-center h-screen">
+
+    <form action="/change" method="post" class="bg-black p-6 rounded-2xl shadow-lg flex flex-col gap-4 w-full max-w-md">
+        <input 
+        value='<%= filename %>'
+        name="current"
+        type="text" 
+        placeholder="Enter the Name"
+        class="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+        <input 
+        name="new"
+        type="text" 
+        placeholder="Enter the Name"
+        class="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+        <input 
+        type="submit" 
+        value="Change"
+        class="bg-yellow-600 text-white py-2 rounded-lg hover:bg-blue-700 cursor-pointer"
+        >
+    </form>
+    </div>
+</div>
+</body>
+</html>

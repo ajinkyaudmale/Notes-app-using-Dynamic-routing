@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>  
+</head>
+<body class="bg-gray-500 text-white">
+<div class="bg-gray-600 flex justify-center  py-10">
+    <form action="/create" method="post" class="bg-black p-6 rounded-2xl shadow-lg flex flex-col gap-4 w-full max-w-md">
+        <input 
+        name="title"
+        type="text" 
+        placeholder="Enter the Name"
+        class="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+        <textarea 
+        name="details"
+        placeholder="Enter the Content"
+        rows="4"
+        class="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+        ></textarea>
+        <input 
+        type="submit" 
+        value="Submit"
+        class="bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 cursor-pointer"
+        >
+    </form>
+</div>
+
+
+<div class="flex gap-4 w-full justify-center mt-2 flex-wrap">
+<% if(files.length > 0){ %>
+    <% files.forEach((val) => {  %>
+        <div class="bg-gray-700 px-5 py-2 rounded-2xl">
+            <h4 class="text-2xl mb-3"><%= val %></h4>
+            <div class="flex justify-around gap-4">
+                <a href="/file/<%= val %>" class="text-blue-300 ">Read more</a>
+                <a href="/change/<%= val %>" class="text-blue-300 ">Change name</a>
+            </div>
+        </div>        
+    <% }) %>
+<% } else { %>
+    <h4 class="text-2xl ">NO File Available</h4>
+<% } %>
+
+
+
+</div>
+
+
+
+</div>
+
+</body>
+</html>
